@@ -1,0 +1,52 @@
+[
+  {
+  "name": "Netflix Movie Data Analysis",
+  "desc": "Analyzed 25,000+ Netflix movies using Python to uncover trends in genres, popularity, and release patterns. Used Pandas, Matplotlib, and Seaborn for visualization.",
+  "image": "netflixdata",
+  "category": "lamp",
+  "links": {
+    "view": "https://github.com/AkashAmirisetty/Netflix-Movie-Analysis.git",
+    "code": "https://github.com/AkashAmirisetty/Netflix-Movie-Analysis.git"
+  }
+},
+{
+  "name": "Vehicle Safety Monitoring System",
+  "desc": "Built a real-time IoT system integrating CNN-based drowsiness detection, alcohol sensing (MQ-3), and collision detection to improve driver safety.",
+  "image": "vehiclesafety",
+  "category": "basicweb",
+  "links": {
+    "view": "https://github.com/AkashAmirisetty/Safety-Monitoring-Systems-in-Vehicles.git",
+    "code": "https://github.com/AkashAmirisetty/Safety-Monitoring-Systems-in-Vehicles.git"
+  }
+},
+{
+  "name": "Speech Accent Recognition",
+  "desc": "Developed a machine learning model to classify English accents using audio from 900+ international speakers. Used MFCC features, SVM and Random Forest classifiers.",
+  "image": "accentrecognition",
+  "category": "basicweb",
+  "links": {
+    "view": "https://github.com/AkashAmirisetty/Speech-Accent-Recognition.git",
+    "code": "https://github.com/AkashAmirisetty/Speech-Accent-Recognition.git"
+  }
+},
+{
+  "name": "Dice Challenge",
+  "desc": "A simple JavaScript dice game where users roll virtual dice and compare results. Built with HTML, CSS, and JavaScript.",
+  "image": "dicechallenge",
+  "category": "mern",
+  "links": {
+    "view": "https://akashamirisetty.github.io/Dice-Challenge/",
+    "code": "https://github.com/AkashAmirisetty/Dice-Challenge"
+  }
+},
+{
+  "name": "Drum Kit",
+  "desc": "Interactive drum kit using JavaScript and event listeners. Users can play drum sounds with key presses or clicks.",
+  "image": "drumkit",
+  "category": "mern",
+  "links": {
+    "view": "https://akashamirisetty.github.io/Drum-kit/",
+    "code": "https://github.com/AkashAmirisetty/Drum-kit"
+  }
+}
+]
