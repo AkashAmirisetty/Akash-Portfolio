@@ -1,0 +1,164 @@
+/* Theme toggle styles and dark mode overrides */
+
+/* --- Toggle control --- */
+.theme-toggle {
+  position: relative; /* align with header items */
+  top: auto;
+  right: auto;
+  z-index: 1100;
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e2e8f0, #ffffff);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  margin-left: 1.5rem; /* spacing from nav */
+  cursor: pointer;
+}
+.theme-toggle:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
+}
+.theme-toggle .icon {
+  font-size: 14px;
+  line-height: 1;
+  color: #0f172a;
+  opacity: 0.85;
+}
+.theme-toggle .icon.moon { color: #1f2937; }
+.theme-toggle .icon.sun { color: #f59e0b; }
+.theme-toggle .ball {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: left 0.25s ease, background-color 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  /* keep accessible on small screens */
+  .theme-toggle {
+    position: absolute;
+    top: 1.6rem;
+    right: 2rem;
+    margin-left: 0;
+  }
+}
+
+/* Dark state for toggle */
+html.dark .theme-toggle {
+  background: linear-gradient(135deg, #1f2937, #0b1220);
+  border-color: rgba(255,255,255,0.08);
+}
+html.dark .theme-toggle .icon { color: #e5e7eb; opacity: 0.9; }
+html.dark .theme-toggle .icon.sun { color: #fbbf24; }
+html.dark .theme-toggle .ball { left: 30px; background: #0ea5e9; }
+
+/* --- Dark mode overrides --- */
+/* Base */
+html.dark body {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+/* Header and navigation */
+html.dark header {
+  background-color: #0f172a;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+html.dark header .logo { color: #e5e7eb; }
+html.dark header .logo:hover { color: #f59e0b; }
+html.dark header .navbar ul li a { color: #e5e7eb; }
+html.dark header .navbar ul li a.active,
+html.dark header .navbar ul li a:hover {
+  color: #93c5fd;
+  border-bottom-color: #3b82f6;
+}
+@media (max-width: 768px) {
+  html.dark header .navbar { background-color: #0b1020; }
+}
+
+/* Headings */
+html.dark .heading { color: #f4f4f5; }
+html.dark .heading span { color: #a78bfa; }
+
+/* Hero */
+html.dark .home .content h2 { color: #e5e7eb; }
+html.dark .home .content h2 span { color: #60a5fa; }
+html.dark .home .content p { color: #cbd5e1; }
+html.dark .social-icons a { background-color: #111827; color: #e5e7eb; }
+
+/* About */
+html.dark .about { background: #0b1220; }
+html.dark .about .row .content h3 { color: #e5e7eb; }
+html.dark .about .row .content .tag { color: #60a5fa; }
+html.dark .about .row .content p { color: #cbd5e1; }
+html.dark .about .row .content .box-container .box p span { color: #60a5fa; }
+
+/* Skills */
+/* Keep gradient but improve contrast */
+html.dark .skills .container { background: rgba(2, 6, 23, 0.6); color: #e5e7eb; }
+html.dark .skills .container .bar { background: rgba(2, 6, 23, 0.95); box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+
+/* Education */
+html.dark .education { background: #0c1222; }
+html.dark .education .box-container .box { background: #0f172a; box-shadow: 0.2rem 0.5rem 1rem rgba(0,0,0,0.5); }
+html.dark .education .box-container .box .content h3 { color: #bfdbfe; }
+html.dark .education .box-container .box .content p { color: #cbd5e1; }
+html.dark .education h4 { color: #86efac; }
+
+/* Work */
+/* Work section is already dark; adjust inner card content */
+html.dark .work .box-container .box .content { background: rgba(17, 24, 39, 0.92); }
+html.dark .work .box-container .box .content .tag { background: #1f2937; }
+html.dark .work .desc p { color: #e5e7eb; }
+html.dark .work .desc .btns .btn { background: #111827; }
+
+/* Experience timeline */
+html.dark .experience .timeline::after { background: #1f2937; }
+html.dark .experience .content { background-color: #334155; }
+html.dark .experience .content .desc h3 { color: #f1f5f9; }
+html.dark .experience .content .desc p { color: #e2e8f0; }
+
+/* Contact */
+html.dark .contact { background: #0c1222; }
+html.dark .contact .container { background: #0f172a; box-shadow: 0 5px 16px rgba(0,0,0,0.5); }
+html.dark form .field input,
+html.dark form .message textarea {
+  background: #0b1220;
+  border-color: #334155;
+  color: #e5e7eb;
+}
+html.dark .field input::placeholder,
+html.dark .message textarea::placeholder { color: #94a3b8; }
+html.dark form i { color: #94a3b8; }
+
+/* Footer */
+/* Footer is already dark; improve link contrast */
+html.dark .footer .box-container .box a { color: #e5e7eb; }
+html.dark .footer .box-container .box a:hover { color: #fbbf24; }
+/* Footer social icons */
+html.dark .footer .box-container .box .share a {
+  background: #111827;
+  color: #f3f4f6;
+  border: 1px solid #1f2937;
+}
+html.dark .footer .box-container .box .share a:hover {
+  background: #1f2937;
+  color: #fbbf24;
+  border-color: #374151;
+}
+
+/* Scroll top */
+html.dark #scroll-top { background: #f59e0b; color: #111827; }
+
+

@@ -39,22 +39,77 @@ $(document).ready(function () {
 
     // <!-- emailjs to mail contact form data -->
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
         event.preventDefault();
+
+        // Ensure EmailJS is initialized
+        try {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init({ publicKey: "user_TTDmetQLYgWCLzHTDgqxm" });
+            }
+        } catch (e) {
+            console.error('EmailJS init error', e);
+        }
+
+        const formEl = document.getElementById('contact-form');
+
+        function submitViaFormSubmit() {
+            // If opened as a file, FormSubmit will reject; use mailto fallback
+            if (window.location.protocol === 'file:') {
+                const formDataSimple = new FormData(formEl);
+                const name = encodeURIComponent(formDataSimple.get('name') || '');
+                const email = encodeURIComponent(formDataSimple.get('email') || '');
+                const phone = encodeURIComponent(formDataSimple.get('phone') || '');
+                const message = encodeURIComponent(formDataSimple.get('message') || '');
+                const subject = encodeURIComponent('New contact from Portfolio');
+                const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\nPhone: ${decodeURIComponent(phone)}\n\nMessage:\n${decodeURIComponent(message)}`);
+                window.location.href = `mailto:amirisettyakash@gmail.com?subject=${subject}&body=${body}`;
+                alert('Opening your email client to send the message. For automatic submission, run the site via a local server.');
+                return;
+            }
+
+            const formData = new FormData(formEl);
+            fetch('https://formsubmit.co/ajax/amirisettyakash@gmail.com', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            })
+            .then(async (res) => {
+                const data = await res.json().catch(() => ({}));
+                if (res.ok && data.success === 'true') {
+                    formEl.reset();
+                    alert('Form Submitted Successfully');
+                } else {
+                    const msg = data.message || 'Unknown error';
+                    alert(`Form Submission Failed! Try Again\nReason: ${msg}`);
+                }
+            })
+            .catch((err) => {
+                console.error('FormSubmit error', err);
+                alert('Form Submission Failed! Try Again');
+            });
+        }
+
+        if (typeof emailjs !== 'undefined') {
+            emailjs
+                .sendForm('contact_service', 'template_contact', formEl, 'user_TTDmetQLYgWCLzHTDgqxm')
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    formEl.reset();
+                    alert("Form Submitted Successfully");
+                })
+                .catch(function (error) {
+                    console.warn('EmailJS failed, falling back to FormSubmit', error);
+                    submitViaFormSubmit();
+                });
+        } else {
+            submitViaFormSubmit();
+        }
     });
     // <!-- emailjs to mail contact form data -->
 
 });
+
+// Theme logic moved to assets/js/theme.js
 
 document.addEventListener('visibilitychange',
     function () {
@@ -108,9 +163,12 @@ function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+        const imageFile = /\.(png|jpg|jpeg|gif|svg)$/i.test(project.image)
+            ? project.image
+            : `${project.image}.png`;
         projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="assets/images/projects/${imageFile}" alt="project" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
