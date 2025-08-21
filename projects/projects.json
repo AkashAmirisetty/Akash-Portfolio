@@ -30,13 +30,23 @@
   }
 },
 {
-  "name": "Dice Challenge",
-  "desc": "A simple JavaScript dice game where users roll virtual dice and compare results. Built with HTML, CSS, and JavaScript.",
-  "image": "dicechallenge",
+  "name": "Ai Meeting Minutes & Action Tracker",
+  "desc": "AI tool that converts meeting transcripts into clear summaries with key decisions and action items.",
+  "image": "meetingminutes",
   "category": "mern",
   "links": {
-    "view": "https://akashamirisetty.github.io/Dice-Challenge/",
-    "code": "https://github.com/AkashAmirisetty/Dice-Challenge"
+    "view": "https://github.com/AkashAmirisetty/AI-Meeting-Minutes-Action-Tracker",
+    "code": "https://github.com/AkashAmirisetty/AI-Meeting-Minutes-Action-Tracker"
+  }
+},
+{
+  "name": "Retail Sales Analysis",
+  "desc": "Analyzed retail sales data using Python and SQL to uncover revenue trends, top products, and customer insights, supported by clear visualizations.",
+  "image": "Retailsales",
+  "category": "lamp",
+  "links": {
+    "view": "https://github.com/AkashAmirisetty/Retail-Sales-Data-Analytics",
+    "code": "https://github.com/AkashAmirisetty/Retail-Sales-Data-Analytics"
   }
 },
 {
@@ -48,17 +58,5 @@
     "view": "https://akashamirisetty.github.io/Drum-kit/",
     "code": "https://github.com/AkashAmirisetty/Drum-kit"
   }
-},
-
-{
-  "name": "Retail Sales Analysis",
-  "desc": "Analyzed retail sales data using Python and SQL to uncover revenue trends, top products, and customer insights, supported by clear visualizations.",
-  "image": "Retailsales",
-  "category": "lamp",
-  "links": {
-    "view": "https://github.com/AkashAmirisetty/Retail-Sales-Data-Analytics",
-    "code": "https://github.com/AkashAmirisetty/Retail-Sales-Data-Analytics"
-  }
 }
-
 ]
