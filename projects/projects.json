@@ -2,7 +2,7 @@
   {
   "name": "Netflix Movie Data Analysis",
   "desc": "Analyzed 25,000+ Netflix movies using Python to uncover trends in genres, popularity, and release patterns. Used Pandas, Matplotlib, and Seaborn for visualization.",
-  "image": "netflixdata",
+  "image": "Akash-Portfolio/assets/images/projects/netflixdata.png",
   "category": "lamp",
   "links": {
     "view": "https://github.com/AkashAmirisetty/Netflix-Movie-Analysis.git",
