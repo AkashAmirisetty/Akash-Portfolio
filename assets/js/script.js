@@ -162,7 +162,8 @@ function showSkills(skills) {
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+    // Only show first 6 projects on main page, rest will be in "View All"
+    projects.slice(0, 6).filter(project => project.category != "android").forEach(project => {
         const imageFile = /\.(png|jpg|jpeg|gif|svg)$/i.test(project.image)
             ? project.image
             : `${project.image}.png`;

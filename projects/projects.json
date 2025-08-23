@@ -50,6 +50,16 @@
   }
 },
 {
+  "name": "Banking Risk Analysis",
+  "desc": "Built an interactive Banking Dashboard in Power BI with SQL Server data, highlighting loans, deposits, customer insights, and key KPIs using DAX.",
+  "image": "bankanalysis",
+  "category": "lamp",
+  "links": {
+    "view": "https://github.com/AkashAmirisetty/Banking-Risk-Analysis",
+    "code": "https://github.com/AkashAmirisetty/Banking-Risk-Analysis"
+  }
+},
+{
   "name": "Drum Kit",
   "desc": "Interactive drum kit using JavaScript and event listeners. Users can play drum sounds with key presses or clicks.",
   "image": "drumkit",
