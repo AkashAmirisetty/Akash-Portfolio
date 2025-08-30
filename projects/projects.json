@@ -10,15 +10,16 @@
   }
 },
 {
-  "name": "Vehicle Safety Monitoring System",
-  "desc": "Built a real-time IoT system integrating CNN-based drowsiness detection, alcohol sensing (MQ-3), and collision detection to improve driver safety.",
-  "image": "vehiclesafety",
-  "category": "basicweb",
+  "name": "Telco Customer Churn Analysis",
+  "desc": "Developed an end-to-end Telco Customer Churn Analysis pipeline using SQL, Python (EDA & ML models), and Power BI (dashboards) to predict and visualize churn patterns.",
+  "image": "telco",
+  "category": "lamp",
   "links": {
-    "view": "https://github.com/AkashAmirisetty/Safety-Monitoring-Systems-in-Vehicles.git",
-    "code": "https://github.com/AkashAmirisetty/Safety-Monitoring-Systems-in-Vehicles.git"
+    "view": "https://github.com/AkashAmirisetty/Telco-Customer-Churn-Analysis-and-Prediction",
+    "code": "https://github.com/AkashAmirisetty/Telco-Customer-Churn-Analysis-and-Prediction"
   }
 },
+
 {
   "name": "Speech Accent Recognition",
   "desc": "Developed a machine learning model to classify English accents using audio from 900+ international speakers. Used MFCC features, SVM and Random Forest classifiers.",
@@ -57,6 +58,16 @@
   "links": {
     "view": "https://github.com/AkashAmirisetty/Banking-Risk-Analysis",
     "code": "https://github.com/AkashAmirisetty/Banking-Risk-Analysis"
+  }
+},
+{
+  "name": "Vehicle Safety Monitoring System",
+  "desc": "Built a real-time IoT system integrating CNN-based drowsiness detection, alcohol sensing (MQ-3), and collision detection to improve driver safety.",
+  "image": "vehiclesafety",
+  "category": "basicweb",
+  "links": {
+    "view": "https://github.com/AkashAmirisetty/Safety-Monitoring-Systems-in-Vehicles.git",
+    "code": "https://github.com/AkashAmirisetty/Safety-Monitoring-Systems-in-Vehicles.git"
   }
 },
 {
